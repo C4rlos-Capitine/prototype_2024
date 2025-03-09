@@ -6,11 +6,15 @@
 	<title>H20 Sick Help</title>
 	<style>
 		body {
+			justify-content: center;
 			margin: 0;
+			width: 100%;
+			/*height: 100%;*/
 			font-family: Arial, sans-serif;
 		}
 
 		header {
+			margin-right: 20px;
 			background-color: #FFEB3B;
 			padding: 15px;
 			text-align: center;
@@ -21,6 +25,13 @@
 			text-decoration: none;
 			margin: 0 15px;
 			font-size: 18px;
+		}
+		main{
+			margin-top: 3.0rem;
+			justify-content: center;
+			height: 100%;
+			padding: 30px;
+			text-align: center;
 		}
 
 		.row {
@@ -60,11 +71,34 @@
 			color: white;
 			text-align: center;
 			padding: 20px;
-			position: static;
+			position: relative;
 			bottom: 0;
 			width: 100%;
-			margin-top: 20px;
+			height: 10rem;
 		}
+		.info-section{
+			background-color: #FFF8E1;
+			margin: auto;
+			width: 80%;
+			padding: 2.2rem;
+		}
+		.sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        .sticky + .content {
+        	padding-top: 60px;
+        }
+        @media (max-width: 720px) {
+		  body {
+		    
+		  }
+		  .row{
+		  	flex-direction: row;
+		  }
+		}
+
 	</style>
 </head>
 <body>
@@ -74,6 +108,12 @@
 		<a href="#">Buscar por familiares</a>
 	</header>
 	<main>
+		<section class="info-section">
+			<p>Esta plataforma foi desenvolvida com o objectivo de ajudar as pessoas, a encontrar pertences perdidos, familiares desaparecidos.
+			A plataforma permite anexar fotos que podem ajudar na identificação de objectos ou de pessoas que voçê procura.</p>
+			<p>
+			Desencorajamos a partilha informações enganosas, seja responsável, e recomendamos que em caso de encontrar qualquer bem pertencente pode encontrar em contacto com o propetário ou se dirija a esquadra mais próxima.</p>
+		</section>
 		<div class="row">
 			<div class="card">
 				<img src="familia.jpg" alt="Imagem 1">
@@ -83,20 +123,33 @@
 				<img src="veiculu.jpg" alt="Imagem 2">
 				<p>Veiculos e outros bens perdidos</p>
 			</div>
-		</div>
-		<div class="row">
-			<div class="card">
+						<div class="card">
 				<img src="documentos.jpg" alt="Imagem 1">
 				<p>Documentos perdidos</p>
 			</div>
 			<div class="card">
-				<img src="fipas2.jpg" alt="Imagem 2">
-				<p>Documentos</p>
+				<img src="contacte_nos.webp" alt="Imagem 2">
+				<p>Fale Conosco</p>
 			</div>
 		</div>
+
 	</main>
 		<footer>
-		<p>Contato: carlos.capitine@outlook.com | WhatsApp: +258 842976341</p>
+		<p>Email: carlos.capitine@outlook.com | WhatsApp: +258 842976341</p>
 	</footer>
 </body>
+<script>
+    window.onscroll = function() {myFunction()};
+    
+    var navbar = document.querySelector("header");
+    var sticky = navbar.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+    </script>
 </html>

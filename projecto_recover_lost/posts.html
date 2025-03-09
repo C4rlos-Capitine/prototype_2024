@@ -3,16 +3,21 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 	<title>H20 Sick Help</title>
 	<style>
-		body {
+body {
+			justify-content: center;
 			margin: 0;
-			height: 1080px;
+			width: 100%;
+			/*height: 100%;*/
 			font-family: Arial, sans-serif;
 		}
 
 		header {
+			margin-right: 20px;
 			background-color: #FFEB3B;
 			padding: 15px;
 			text-align: center;
@@ -24,6 +29,13 @@
 			margin: 0 15px;
 			font-size: 18px;
 		}
+		main{
+			margin-top: 3.0rem;
+			justify-content: center;
+			height: 100%;
+			padding: 30px;
+			text-align: center;
+		}
 
 		.row {
 			display: flex;
@@ -33,38 +45,108 @@
 			margin-top: 20px;
 		}
 
-	
+		.card {
+			width: 300px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			overflow: hidden;
+			background: #fff;
+			text-align: center;
+		}
 
-		
+		.card img {
+			width: 100%;
+			height: 150px;
+			object-fit: cover;
+		}
+
+		.card p {
+			margin: 10px 0;
+			padding: 10px;
+			font-size: 16px;
+			color: #333;
+		}
 		footer {
 			background-color: black;
 			color: white;
 			text-align: center;
 			padding: 20px;
-			position: static;
+			position: relative;
 			bottom: 0;
 			width: 100%;
-			margin-top: 20px;
+			height: 10rem;
 		}
-
-		main{
-			height: 90%;
-			display: flex;
-			flex-direction: row;
-		}
-
-
-		#content{
+		.info-section{
+			background-color: #FFF8E1;
+			margin: auto;
 			width: 80%;
-			display: flex;
-			text-align: center;
-			flex-direction: column;
-			margin: 10px;
+			padding: 2.2rem;
 		}
-		.card{
-			margin: 0;
+		.sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        .sticky + .content {
+        	padding-top: 60px;
+        }
+
+        .post-section{
+        	justify-content: center;
+        	justify-items: center;
+        	/*background-color: #FFF8E1;*/
+		    margin: auto;
+		    width: 80%;
+		    padding: 2.2rem;
+
+        }
+
+        .post{
+        	border-radius: 0.2rem 0.2rem;
+        	padding: 1.4rem;
+        	margin: 1.4rem;
+        	width: 90%;
+        	background-color: #ECEFF1;
+        	display: flex;
+		    flex-direction: row;
+        }
+        .img-post{
+        	border-radius: 40rem 40rem;
+        	padding: 0.1rem;
+        	background-color: white;
+        	height: fit-content;
+        	width: fit-content;
+        }
+        .imagem{
+        	border-radius: 40rem 40rem;
+        }
+        .inf-post{
+        	margin: 1.2rem;
+        }
+        .collapse{
+        	width: 80%;
+        }
+        @media (max-width: 500px) {
+		  body {
+		    
+		  }
+        .post{
+        	border-radius: 0.2rem 0.2rem;
+        	padding: 1.4rem;
+        	margin: 1.4rem;
+        	width: 90%;
+        	background-color: #ECEFF1;
+        	display: flex;
+		    flex-direction: column;
+        }
 		}
+
+
 	</style>
+
 </head>
 <body>
 	<header>
@@ -73,37 +155,84 @@
 		<a href="#">Buscar por familiares</a>
 	</header>
 	<main>
-		<aside>
-			<h1>Side left</h1>
-		</aside>
-		<section id="content">
-			<div class="card">
-			  <div class="card-header">
-			    Featured
-			  </div>
-			  <div class="card-body">
-			    <h5 class="card-title">Special title treatment</h5>
-			    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-			    <a href="#" class="btn btn-primary">Go somewhere</a>
-			  </div>
+
+		<section class="post-section">
+			<div class="post">
+				<div class="img-post">
+					<img class="imagem" src="familia.jpg">
+				</div>
+				<div class="inf-post">
+					<h2>Parente perdido</h2>
+					<p>Texto descrevendo a situação.....dssfdsfdsfsdfsdfsd</p>
+					<p>
+					  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+					    Ver mais
+					  </button>
+					</p>
+					<div class="collapse" id="collapseExample">
+					  <div class="card card-body">
+					    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+					  </div>
+					</div>
+				</div>
 			</div>
-			<div class="card">
-			  <div class="card-header">
-			    Featured
-			  </div>
-			  <div class="card-body">
-			    <h5 class="card-title">Special title treatment</h5>
-			    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-			    <a href="#" class="btn btn-primary">Go somewhere</a>
-			  </div>
+			<div class="post">
+				<div class="img-post">
+					<img class="imagem" src="familia.jpg">
+				</div>
+				<div class="inf-post">
+					<h2>Parente perdido</h2>
+					<p>Texto descrevendo a situação.....dssfdsfdsfsdfsdfsd</p>
+										<p>
+					  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+					    Ver mais
+					  </button>
+					</p>
+					<div class="collapse" id="collapseExample">
+					  <div class="card card-body">
+					    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+					  </div>
+					</div>
+				</div>
+			</div>
+			<div class="post">
+				<div class="img-post">
+					<img class="imagem" src="familia.jpg">
+				</div>
+				<div class="inf-post">
+					<h2>Parente perdido</h2>
+					<p>Texto descrevendo a situação.....dssfdsfdsfsdfsdfsd</p>
+										<p>
+					  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+					    Ver mais
+					  </button>
+					</p>
+					<div class="collapse" id="collapseExample">
+					  <div class="card card-body">
+					    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+					  </div>
+					</div>
+				</div>
 			</div>
 		</section>
-		<aside>
-			<h1>Side right</h1>
-		</aside>
+
 	</main>
-		<footer>
+	<footer>
 		<p>Contato: carlos.capitine@outlook.com | WhatsApp: +258 842976341</p>
 	</footer>
 </body>
+<script>
+    window.onscroll = function() {myFunction()};
+    
+    var navbar = document.querySelector("header");
+    var sticky = navbar.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+    </script>
 </html>
