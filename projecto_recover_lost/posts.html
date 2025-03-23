@@ -145,6 +145,19 @@ body {
 		}
 
 
+		/* Style for the button */
+
+
+		/* Style for the collapsible content */
+		.content {
+		    padding: 0 18px;
+		    display: none; /* Hidden by default */
+		    overflow: hidden;
+		    background-color: #f1f1f1;
+		}
+
+
+
 	</style>
 
 </head>
@@ -165,15 +178,14 @@ body {
 					<h2>Parente perdido</h2>
 					<p>Texto descrevendo a situação.....dssfdsfdsfsdfsdfsd</p>
 					<p>
-					  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+					  <button class="btn btn-primary collapsible" id="1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 					    Ver mais
 					  </button>
 					</p>
-					<div class="collapse" id="collapseExample">
-					  <div class="card card-body">
-					    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-					  </div>
-					</div>
+					<div class="content" id="content-1">
+		        <p>This is the content inside the collapsible element. You can put anything here!</p>
+		    	</div>
+
 				</div>
 			</div>
 			<div class="post">
@@ -188,11 +200,7 @@ body {
 					    Ver mais
 					  </button>
 					</p>
-					<div class="collapse" id="collapseExample">
-					  <div class="card card-body">
-					    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-					  </div>
-					</div>
+
 				</div>
 			</div>
 			<div class="post">
@@ -207,11 +215,11 @@ body {
 					    Ver mais
 					  </button>
 					</p>
-					<div class="collapse" id="collapseExample">
+					<!--<div class="collapse" id="collapseExample">
 					  <div class="card card-body">
 					    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
 					  </div>
-					</div>
+					</div>-->
 				</div>
 			</div>
 		</section>
@@ -234,5 +242,29 @@ body {
         navbar.classList.remove("sticky");
       }
     }
+
+
+    // Get all the collapsible elements
+    var collapsibles = document.querySelectorAll(".collapsible");
+
+    // Add click event to each collapsible button
+    collapsibles.forEach(function(collapsible) {
+        collapsible.addEventListener("click", function() {
+            // Toggle the 'active' class on the button
+            this.classList.toggle("active");
+            console.log(this.id)
+
+            var content = document.getElementById('content-'+this.id)
+            // Get the next element (the content div) and toggle its display
+            //var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    });
+
+
     </script>
 </html>
